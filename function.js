@@ -11,9 +11,12 @@
 
 var database = firebase.database();
 
+<<<<<<< HEAD
 function writeToGrid(objectToWrite){
 	 database.ref().set(objectToWrite);
 	}
+=======
+>>>>>>> 37263cbf10271006a8da0894ff5498097390b571
 
 $("#addButton").on('click', function(event){
 	event.preventDefault();
@@ -25,9 +28,12 @@ var objectToUpdate = {}
       objectToUpdate.start = $('#start-input').val().trim();
       objectToUpdate.rate = $('#rate-input').val().trim();
 
+<<<<<<< HEAD
       console.log(objectToUpdate);
 
       writeToGrid(objectToUpdate);
+=======
+>>>>>>> 37263cbf10271006a8da0894ff5498097390b571
 
 database.ref().push({
 	name: objectToUpdate.name,
