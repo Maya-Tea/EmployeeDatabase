@@ -13,13 +13,19 @@ var database = firebase.database();
      
 
 
+var objectToUpdate = {
+  name:"",
+  role:"",
+  start:"",
+  rate:""
+};
 
 
 
 $("#addButton").on('click', function(event){
 	event.preventDefault();
 
-  var objectToUpdate={};
+
 
       objectToUpdate.name = $('#name-input').val().trim();
       objectToUpdate.role = $('#role-input').val().trim();
@@ -40,16 +46,15 @@ database.ref().push({
 });
 database.ref().on("child_added",function(snapshot){ 
   var a=snapshot.val();
-
-  console.log(snapshot.val().name);
-  var newDiv=$('<div class="col-md-2">');
-    newDiv.append(a.name);
+  var b= objectToUpdate;
+  var newDiv=$('<div class="col-md-2 name">');
+    $(".name").append(a.b.name);
   var newDiv1=$('<div class="col-md-2">');
-    newDiv1.append(a.role);
+    newDiv1.append(a.b.role);
   var newDiv2=$('<div class="col-md-2">');
-    newDiv2.append(a.start);
+    newDiv2.append(a.b.start);
   var newDiv3=$('<div class="col-md-2">');
-    newDiv3.append(a.rate);
+    newDiv3.append(a.b.rate);
   
   var superDiv=$('<div class="row">');
     superDiv.append(newDiv);
